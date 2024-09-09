@@ -1,11 +1,7 @@
 const colorBtn = document.getElementById("color-select-button");
 const selectBtn = document.getElementById("select-button");
 const buttonGeneratorBtn = document.getElementById("button-generator");
-const firstColor = document.getElementById("first-color");
-const secondColor = document.getElementById("second-color");
-const thirdColor = document.getElementById("third-color");
-const fourthColor = document.getElementById("fourth-color");
-const fifthColor = document.getElementById("fifth-color");
+const colorCodeContainer = document.getElementById("color-code-container");
 const resultColor = document.getElementById("result-color");
 
 buttonGeneratorBtn.addEventListener("click", function (event) {
@@ -22,22 +18,16 @@ buttonGeneratorBtn.addEventListener("click", function (event) {
   })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       let colorData = data.colors;
       let colorstrings = ``;
+      let colorCodeStr = ``;
 
       for (let i = 0; i < colorData.length; i++) {
         colorstrings += `<div class="color" style="background-color: ${colorData[i].hex.value};"></div>`;
+        colorCodeStr += `<div>${colorData[i].hex.value}</div>`;
       }
-      console.log(colorstrings);
+      colorCodeContainer.innerHTML = colorCodeStr;
       resultColor.innerHTML = colorstrings;
-      
     });
-
-  // let colorpallete = "";
-  // for (let i = 0; i < event.length; i++) {
-  //   colorpallete += `
-  //       <div style="background-color:"></div>
-  //     `;
-  // }
-  // resultColor.innerHtml = colorpallete;
 });

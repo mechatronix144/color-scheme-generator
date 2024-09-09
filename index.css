@@ -51,14 +51,21 @@ body {
   width: 40em;
   height: 40em;
   display: flex;
-  /* border: 2px solid grey; */
+  border: 2px solid grey;
 }
 
-#first-color {
-  width: 8em;
-  height: 40em;
-}
+/* .section-second{
+  height: 50rem;
+  background-color: aqua;
+} */
 .color {
   width: 8em;
-  height: 40em;
+  height: 35em;
+}
+#color-code-container {
+  display: flex;
+  gap: 3em;
+  /* padding-top: 40rem; */
+  padding-left: 9em;
+  font-size: larger;
 }
